@@ -187,7 +187,7 @@ The web application enables users to input real-world weather parameters and ins
 | Metric    | XGBoost Final |
 | -----------------| ------------- |
 | Accuracy         | **85.32%**    |
-| Threshold Optim  |               |
+| Threshold Optim  | **90.02%**    |
 | Precision        | 0.90          |
 | Recall           | 0.64          |
 | F1-Score         | 0.77          |
@@ -201,9 +201,9 @@ The web application enables users to input real-world weather parameters and ins
 
 ## 🌐 User Interface Preview
 
-| Input Form                                                     | Prediction Output                                 |
-| -------------------------------------------------------------- | ------------------------------------------------- |
-| ![Form](https://cdn-icons-png.flaticon.com/512/414/414825.png) | 🌩️ “High Chance of Cloudburst” shown dynamically |
+| Input Form                                                                                                                          | Prediction Output                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| <img width="450" height="1965" alt="image" src="https://github.com/user-attachments/assets/eb899838-283f-4565-9b4e-5e846c2e10a1" /> | 🌩️ “High Chance of Cloudburst” shown dynamically  |
 
 ---
 
