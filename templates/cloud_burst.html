@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudburst Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(180deg, #87cefa, #1e3c72);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            transition: background 1s ease;
+        }
+        /* College title top-left */
+        
+        .college-title {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 20;
+            white-space: nowrap;
+        }
+        /* Team title top-right */
+        
+        .team-title {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 20;
+        }
+        /* Clouds */
+        
+        .cloud {
+            position: absolute;
+            width: 150px;
+            top: 10%;
+            animation: float 12s ease-in-out infinite;
+            opacity: 0.9;
+        }
+        
+        .cloud:nth-child(2) {
+            left: 20%;
+            animation-delay: 3s;
+        }
+        
+        .cloud:nth-child(3) {
+            right: 15%;
+            animation-delay: 6s;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        /* Rain */
+        
+        .rain {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            top: -10%;
+            animation: rain linear infinite;
+        }
+        
+        @keyframes rain {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(110vh);
+            }
+        }
+        /* Lightning */
+        
+        .lightning {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: flash 0.2s ease-in-out infinite;
+        }
+        
+        @keyframes flash {
+            0%,
+            100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        /* Glass Container */
+        
+        .container {
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 18px 15px;
+            /* reduced height */
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            width: 85%;
+            max-width: 450px;
+            animation: fadeIn 1.5s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h1 {
+            font-size: 1.7em;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 0 20px #000, 0 0 30px #0ff;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #ccc;
+            text-shadow: 0 0 5px #000;
+        }
+        
+        input {
+            width: 85%;
+            padding: 10px;
+            /* smaller input height */
+            margin: 5px 0;
+            /* reduced spacing */
+            border-radius: 10px;
+            border: 1px solid rgba(21, 21, 21, 0.3);
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            outline: none;
+            background: rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+        
+        button {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            border: none;
+            padding: 10px 25px;
+            margin-top: 10px;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+        }
+        
+        #result {
+            font-size: 1.3em;
+            margin-top: 20px;
+            text-shadow: 0 0 15px #0ff, 0 0 20px #00f;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="college-title">Saveetha Engineering College - IBM Z Datathon</div>
+    <div class="team-title">Team Datanauts SAV241</div>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" class="cloud" style="left:5%;">
+    <img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" class="cloud" style="left:35%;width:200px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" class="cloud" style="right:5%;">
+
+    <div id="rain"></div>
+    <div id="lightning" class="lightning" style="display:none;"></div>
+
+    <div class="container">
+        <h1>🌩️ Cloudburst Predictor</h1>
+        <p>Enter the values below:</p>
+<form id="predictForm">
+  <input type="number" name="temperature" placeholder="Average Temperature (°C)" required>
+  <input type="number" name="rainfall" placeholder="Rainfall (mm)" required>
+  <input type="number" name="evaporation" placeholder="Evaporation (mm)" required>
+  <input type="number" name="humidity" placeholder="Average Humidity (%)" required>
+  <input type="number" name="wind" placeholder="Wind Gust Speed (km/h)" required>
+  <input type="number" name="pressure" placeholder="Average Pressure (hPa)" required>
+  <button type="submit">Predict</button>
+</form>
+<div id="result"></div>
+
+    </div>
+
+    <script>
+  const form = document.getElementById('predictForm');
+  const resultDiv = document.getElementById('result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    resultDiv.textContent = "⏳ Predicting...";
+
+    const formData = new FormData(form);
+    const response = await fetch("/predict", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.prediction) {
+      if (data.prediction === "Yes") {
+        resultDiv.innerHTML = "🌧️ High chance of Cloudburst!";
+        document.body.style.background = "linear-gradient(180deg,#0f2027,#203a43,#2c5364)";
+      } else {
+        resultDiv.innerHTML = "☀️ No Cloudburst Expected.";
+        document.body.style.background = "linear-gradient(180deg,#87cefa,#1e3c72)";
+      }
+    } else {
+      resultDiv.innerHTML = "⚠️ Error: " + data.error;
+    }
+  });
+</script>
+</body>
+</html>
