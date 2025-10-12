@@ -181,7 +181,7 @@ How it works:
 
 | Metric    | XGBoost Final |
 | --------- | ------------- |
-| Accuracy  | 90.2 percent  |
+| Accuracy  |  percent  |
 | Precision | 0.90          |
 | Recall    | 0.64          |
 | F1-Score  | 0.77          |
