@@ -211,7 +211,7 @@ The web application enables users to input real-world weather parameters and ins
 
 | Input Form                                                                                                                          | Prediction Output                                 |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| <img width="450" height="1965" alt="image" src="<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7737d026-b0f3-4d0d-a133-084b6653a86a"/> | 🌩️ “High Chance of Cloudburst” shown dynamically  |
+| <img width="450" height="1965" alt="image" src="https://github.com/user-attachments/assets/7737d026-b0f3-4d0d-a133-084b6653a86a"/> | 🌩️ “High Chance of Cloudburst” shown dynamically  |
 
 ---
 
