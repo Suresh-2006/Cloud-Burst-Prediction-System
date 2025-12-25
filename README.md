@@ -27,7 +27,7 @@ This project was developed by **Team 247** from **Saveetha Engineering College**
 | Libraries            | XGBoost, Scikit-learn, Pandas, Numpy, Seaborn, Matplotlib, Joblib |
 | Web Framework        | Flask                                                             |
 | Frontend             | HTML5, CSS3, JavaScript                                           |
-| Deployment           | LinuxONE Cloud Server / IBM Cloud / Localhost                     |
+| Deployment           | Render / Localhost                                                |
 | Version Control      | Git & GitHub                                                      |
 
 ---
@@ -177,7 +177,7 @@ The application is deployed on Render and can be accessed at:
 | Metric           | XGBoost Final |
 | -----------------| ------------- |
 | Accuracy         | **85.32%**    |
-| Threshold Optim  | **90.02%**    |
+| Threshold Optim  | **90.02 %**    |
 | Precision        | 0.90          |
 | Recall           | 0.64          |
 | F1-Score         | 0.77          |
@@ -192,8 +192,8 @@ The application is deployed on Render and can be accessed at:
 ## 🌐 User Interface Preview
 
 | Input Form                                                                                                                          | Prediction Output                                 |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| <img width="450" height="1965" alt="image" src="https://github.com/user-attachments/assets/7737d026-b0f3-4d0d-a133-084b6653a86a"/> | 🌩️ “High Chance of Cloudburst” shown dynamically  |
+| ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------|
+| <img width="450" height="1965" alt="image" src="https://github.com/user-attachments/assets/7737d026-b0f3-4d0d-a133-084b6653a86a"/>  | “High Chance of Cloudburst” shown dynamically     |
 
 ---
 
@@ -205,16 +205,16 @@ Saveetha Engineering College
 
 | Name           | Role                                      |
 | ------------   | ------------------------------------------|
-| Suresh S       | Model Development, Backend Integration  |
-| Sarweshvaran A | Deployment & Testing                    |
-| Tamizhselvan B | Documentation,Report & Github Management|
+| Suresh S       | Project Lead & ML Engineer                |
+| Sarweshvaran A | Data Analyst & BackEnd Developer          |
+| Tamizhselvan B | FrontEnd & Integration Engineer           |
 
 ---
 
 ## 🏆 Achievements
 
 * Developed a complete **end-to-end ML-based cloudburst prediction system**
-* Achieved **over 90% accuracy** after fine-tuning
+* Achieved **over 85% accuracy** after fine-tuning
 * Integrated interactive web-based prediction system
 
 ---
